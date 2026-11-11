@@ -75,8 +75,6 @@ The pinned setup exists purely for reproducibility purposes.
 │   ├── 02_run_prepared_inputs/    # Run SOMD2 free energy simulations
 │   └── 03_analyse_free_energies/  # Compute free energy estimates from simulation output
 ├── plotting/                      # Instructions for reproducing key figures
-│   └── post-processed/            # Post-processed data for replotting without rerunning
-│                                   # simulations
 └── LICENSE                        # Code license (MIT)
 ```
 
@@ -85,7 +83,7 @@ The pinned setup exists purely for reproducibility purposes.
 ## Requirements
 
 - Docker (or Apptainer/Singularity for HPC use) — see [`simulations/docker/README.md`](simulations/docker/README.md)
-- Conda environment for running analysis & plotting scripts (ADD CONDA ENV)
+- Conda environment for running analysis & plotting scripts
 
 ---
 
@@ -100,13 +98,13 @@ cd PCSK9-Macrocycle-FEP
 2. **Prepare inputs** — follow instructions in [`simulations/01_prepare_inputs`](simulations/01_prepare_inputs) to build perturbable systems from `data/`.
 3. **Run simulations** — follow instructions in [`simulations/02_run_prepared_inputs`](simulations/02_run_prepared_inputs).
 4. **Analyse free energies** — follow instructions in [`simulations/03_analyse_free_energies`](simulations/03_analyse_free_energies).
-5. **Reproduce manuscript figures** — see [`plotting/`](plotting/); `plotting/post-processed/` to regenerate figures directly without rerunning any simulation.
+5. **Reproduce manuscript figures** — see [`plotting/`](plotting/); `plotting/` to regenerate figures directly without rerunning any simulation.
 
 ---
 
 ## Data availability
 
-Raw ligand (`data/ligands/*.sdf`) and protein (`data/protein/*.pdb`) input structures, along with the post-processed free energy results used to generate the manuscript figures (`plotting/post-processed/`), are provided directly in this repository.
+Raw ligand (`data/ligands/*.sdf`) and protein (`data/protein/*.pdb`) input structures, along with the post-processed free energy results used to generate the manuscript figures (`plotting/`), are provided directly in this repository.
 
 ---
 
