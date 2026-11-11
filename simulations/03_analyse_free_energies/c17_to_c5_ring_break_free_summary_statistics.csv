@@ -1,0 +1,4 @@
+strategy,Mean_Final_Forward,Std_Final_Forward,Mean_Final_Backward,Std_Final_Backward
+Full (0 - 10 ns),51.79,0.12,51.79,0.12
+Auto-Equilibrated (Variable Discard),51.79,0.09,51.79,0.09
+Rapid (1 - 5 ns),51.73,0.28,51.73,0.28
