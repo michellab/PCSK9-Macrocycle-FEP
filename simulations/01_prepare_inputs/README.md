@@ -15,14 +15,16 @@ This will recreate the environment with the exact package versions and builds us
 
 **Notes:**
 - This spec file is platform-specific (linux-64) and will not work on macOS or Windows.
-- Requires the same conda channels used originally (see file header) to still be accessible.
+- Every package is pinned by its full conda-forge URL, so the packages must still be downloadable from those URLs.
 - Activate the environment after creation:
 
 ```bash
 conda activate openff-toolkit
 ```
 
-Following this, use this environment with the `parametrise_raw_inputs_with_nagl.ipynb` notebook to rebuild the parametrised ligand files.
+Following this, use this environment with the `parametrise_raw_inputs_with_nagl.ipynb` notebook to rebuild the parametrised ligand files in `parametrised_ligands/` from `../../data/ligands/*.sdf`.
+
+`parametrised_ligands/` also contains ligands from exploratory builds that are not used by any edge in `campaign.json`. Three of them (`compound_2_..._manual_build`, `compound_7_..._manual_build` and `compound_35_..._manual_build`) have no source `.sdf` in `data/ligands/`, so the notebook does not regenerate them. They are kept for completeness only.
 
 ---
 
@@ -42,7 +44,7 @@ conda activate openbiosim-pcsk9-repro
 conda install cmake pip-requirements-parser
 conda install gcc gxx   # Linux; use clang/clangxx on macOS
 
-# setuptools must be pinned below v82, since pkg_resources (removed in
+# setuptools must be pinned below v81, since pkg_resources (removed in
 # setuptools>=82) is required by this version of Sire's build script.
 # See "Known issues" below for details.
 conda install "setuptools<81"
@@ -71,7 +73,7 @@ cd python
 pip install -e .
 ```
 
-This checks out commit [`8d7eb9c3`](https://github.com/openbiosim/biosimspace/commit/8d7eb9c3), corresponding to BioSimSpace version `2025.2.0.dev0+31.g8d7eb9c3`, and installs it in editable mode into the `openbiosim-pcsk9-repro` environment.
+This checks out commit [`8d7eb9c3`](https://github.com/openbiosim/biosimspace/commit/8d7eb9c3), corresponding to BioSimSpace version `2025.2.0.dev+31.g8d7eb9c3`, and installs it in editable mode into the `openbiosim-pcsk9-repro` environment.
 
 ### 3. Verify the installation
 
@@ -88,11 +90,11 @@ sire 52402fb
 **Notes:**
 - This installation is Linux-only.
 - Sire and BioSimSpace were originally installed as pre-built conda packages (`sire=2025.4.0.dev=py311h0666ab4_18` from the `openbiosim/label/dev` channel, and BioSimSpace pip-installed from source at the commit above). **OpenBioSim's dev channel only retains a rolling window of recent builds, so the exact Sire package is no longer resolvable** — hence building from source at the pinned commit instead.
-- **Known issue:** This version of Sire's `setup.py` predates the removal of `pkg_resources` from `setuptools` (removed in setuptools ≥82, late 2025). If your environment's `setuptools` is newer, the build script's dependency-installation step silently fails to install anything and errors with `CondaValueError: too few arguments`. Fix by pinning `setuptools<81` (as above) before running `setup.py`.
+- **Known issue:** This version of Sire's `setup.py` predates the removal of `pkg_resources` from `setuptools` (removed in setuptools ≥82, late 2025). If your environment's `setuptools` is newer, the build script's dependency-installation step silently fails to install anything and errors with `CondaValueError: too few arguments`. Fix by pinning `setuptools<81` (as in step 1) before running `setup.py`.
 - **Known issue:** This version of Sire's build script pins
   `sysroot_linux-64==2.17` in its dependency list, which is too old for the
   glibc symbol versions the pre-built `libOpenMM.so` requires (causing
-  `undefined reference to 'powf@GLIBC_2.27'` at the link step — see above).
+  `undefined reference to 'powf@GLIBC_2.27'` at the link step).
   Work around this by upgrading the sysroot *and* telling the script to skip
   re-pinning it:
 

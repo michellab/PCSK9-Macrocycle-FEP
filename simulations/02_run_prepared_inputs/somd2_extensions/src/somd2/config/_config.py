@@ -316,8 +316,8 @@ class Config:
 
         multi_conformational_seeding: bool
             Whether to seed the simulation with multiple conformations. This
-            will seed lambda states <= multi_conformational_seeding_lambda_threshold with molecule0
-            conformation and lambda states > multi_conformational_seeding_lambda_threshold
+            will seed lambda states < multi_conformational_seeding_lambda_threshold with molecule0
+            conformation and lambda states >= multi_conformational_seeding_lambda_threshold
             with molecule1 conformations. This is useful for simulations where
             the two end state conformations are separated by a high energetic barrier.
 

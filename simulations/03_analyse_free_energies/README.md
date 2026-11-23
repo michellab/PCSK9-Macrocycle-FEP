@@ -8,6 +8,12 @@ This directory contains a script and example run directory used to analyse free 
 ## Prerequisites
 
 - Use the `openbiosim-pcsk9-repro` conda environment installed previously or the latest `devel` BioSimSpace version in order to run the analysis script.
+- The script also needs `seaborn` for plotting, which is not installed with BioSimSpace:
+
+```bash
+conda activate openbiosim-pcsk9-repro
+conda install -c conda-forge seaborn
+```
 
 ## Usage
 

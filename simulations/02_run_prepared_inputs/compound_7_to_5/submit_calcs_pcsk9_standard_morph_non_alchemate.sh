@@ -1,7 +1,7 @@
 #!/bin/bash
 prod_time=10000
 
-for system_name in "compound_7_reconnected_to_5_free_leg" "compound_5_reconnected_to_5_free_leg"
+for system_name in "compound_7_reconnected_to_5_free_leg" "compound_7_reconnected_to_5_bound_leg"
 do
     for repl in 1 2 3
     do

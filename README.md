@@ -33,7 +33,7 @@ eprint = {https://chemrxiv.org/doi/pdf/10.26434/chemrxiv.15011937/v1},
 }
 ```
 
-A DOI for this repository itself (via Zenodo) will be added here once the accompanying release is archived.
+This repository is archived on Zenodo together with the container images used to run the simulations (DOI: <!-- TODO: add once archived -->). The GitHub repository does not contain the container images, so use the Zenodo record to get them (see [`simulations/docker/README.md`](simulations/docker/README.md)). The GitHub repository may be a few commits ahead of the Zenodo record.
 
 ---
 
@@ -65,16 +65,21 @@ The pinned setup exists purely for reproducibility purposes.
 ├── data/                          # Raw `.sdf` and `.pdb` input structures used to build
 │                                   # perturbable systems (`.bss`) for the SOMD2 engine
 │   ├── ligands/                   # Macrocycle ligand structures (`.sdf`)
-│   └── protein/                   # PCSK9 protein structures (`.pdb`)
+│   └── proteins/                  # PCSK9 protein structure (`.pdb`)
 ├── simulations/                   # Instructions for running the transformations
 │                                   # described in the manuscript
 │   ├── docker/
 │   │   └── README.md              # Instructions for retrieving the Docker images
 │   │                               # used to run simulations
 │   ├── 01_prepare_inputs/         # Build perturbable systems from data/
+│   │   ├── parametrised_ligands/  # OpenFF/NAGL-parametrised ligands (`.prm7`/`.rst7`/`.pdb`)
+│   │   └── campaign.json          # Edges: ligand pairs, atom mappings, ring-breaking flags
 │   ├── 02_run_prepared_inputs/    # Run SOMD2 free energy simulations
-│   └── 03_analyse_free_energies/  # Compute free energy estimates from simulation output
-├── plotting/                      # Instructions for reproducing key figures
+│   │   ├── compound_X_to_Y/       # Run and submit scripts for each transformation
+│   │   └── somd2_extensions/      # Modified SOMD2 source files bind-mounted into the container
+│   ├── 03_analyse_free_energies/  # Compute free energy estimates from simulation output,
+│   │                               # with an example leg (`c17_to_c5_ring_break_free/`)
+│   └── plotting/                  # Data and scripts for reproducing key figures
 └── LICENSE                        # Code license (MIT)
 ```
 
@@ -82,7 +87,7 @@ The pinned setup exists purely for reproducibility purposes.
 
 ## Requirements
 
-- Docker (or Apptainer/Singularity for HPC use) — see [`simulations/docker/README.md`](simulations/docker/README.md)
+- Apptainer (as used for the manuscript) or Docker, and an NVIDIA GPU — see [`simulations/docker/README.md`](simulations/docker/README.md)
 - Conda environment for running analysis & plotting scripts
 
 ---
@@ -94,23 +99,23 @@ git clone https://github.com/michellab/PCSK9-Macrocycle-FEP.git
 cd PCSK9-Macrocycle-FEP
 ```
 
-1. **Pull the Docker images** — see [`simulations/docker/README.md`](simulations/docker/README.md) for exact image tags and pull commands.
+1. **Get the container images** — download them from the Zenodo record or pull them from Docker Hub, as described in [`simulations/docker/README.md`](simulations/docker/README.md).
 2. **Prepare inputs** — follow instructions in [`simulations/01_prepare_inputs`](simulations/01_prepare_inputs) to build perturbable systems from `data/`.
 3. **Run simulations** — follow instructions in [`simulations/02_run_prepared_inputs`](simulations/02_run_prepared_inputs).
 4. **Analyse free energies** — follow instructions in [`simulations/03_analyse_free_energies`](simulations/03_analyse_free_energies).
-5. **Reproduce manuscript figures** — see [`plotting/`](plotting/); `plotting/` to regenerate figures directly without rerunning any simulation.
+5. **Reproduce manuscript figures** — follow instructions in [`simulations/plotting/overall_performance`](simulations/plotting/overall_performance). The post-processed results are included, so the figures can be regenerated without rerunning any simulation.
 
 ---
 
 ## Data availability
 
-Raw ligand (`data/ligands/*.sdf`) and protein (`data/protein/*.pdb`) input structures, along with the post-processed free energy results used to generate the manuscript figures (`plotting/`), are provided directly in this repository.
+Raw ligand (`data/ligands/*.sdf`) and protein (`data/proteins/*.pdb`) input structures, along with the post-processed free energy results used to generate the manuscript figures (`simulations/plotting/`), are provided directly in this repository. The container images used to run the simulations are archived in the Zenodo record of this repository.
 
 ---
 
 ## License
 
-Code in this repository (`simulations/`, `plotting/` scripts) is released under the **MIT License** (see [`LICENSE`](LICENSE)).
+Code in this repository (scripts in `simulations/`, including `simulations/plotting/`) is released under the **MIT License** (see [`LICENSE`](LICENSE)).
 
 ---
 

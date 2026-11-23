@@ -8,10 +8,10 @@ from shutil import copy2
 def get_user_input():
     parser = argparse.ArgumentParser(description="Simulation parameters")
     parser.add_argument(
-        "--equib_time", type=int, required=True, help="Equilibration time in seconds"
+        "--equib_time", type=int, required=True, help="Equilibration time in picoseconds"
     )
     parser.add_argument(
-        "--prod_time", type=int, required=True, help="Production time in seconds"
+        "--prod_time", type=int, required=True, help="Production time in picoseconds"
     )
     parser.add_argument("--system_name", type=str, required=True, help="System name")
     parser.add_argument(

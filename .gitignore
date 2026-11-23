@@ -1,3 +1,5 @@
 simulations/01_prepare_inputs/alchemical_somd2_run_files/
 *.sif
 __pycache__
+# Container image archives: distributed via Zenodo, not GitHub
+simulations/docker/*.docker.tar.gz

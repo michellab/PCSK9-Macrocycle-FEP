@@ -131,7 +131,7 @@ somd2_config.timeout = "30 s"
 somd2_config.shift_delta = f"2.25A"
 somd2_config.shift_coulomb = f"1A"
 
-context = SimulationContext(system=f"../../01_prepare_inputs/alchemical_somd2_run_files/{system_name}.bss", somd2_config=somd2_config)
+context = SimulationContext(system=sire_system, somd2_config=somd2_config)
 
 
 simulation_workflow = [
