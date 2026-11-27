@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the manuscript below."
+title: "PCSK9-Macrocycle-FEP: data and scripts for alchemical free energy calculations on a macrocyclic peptide PCSK9 series"
+type: software
+license: MIT
+repository-code: "https://github.com/michellab/PCSK9-Macrocycle-FEP"
+authors:
+  - given-names: Audrius
+    family-names: Kalpokas
+    orcid: "https://orcid.org/0000-0002-4579-070X"
+    affiliation: "EaStCHEM School of Chemistry, The University of Edinburgh, Edinburgh, EH9 3FJ, United Kingdom"
+  - given-names: Lester
+    family-names: Hedges
+    affiliation: "OpenBioSim Community Interest Company, Edinburgh, EH3 7PE, United Kingdom"
+  - given-names: Mark
+    family-names: Mackey
+    orcid: "https://orcid.org/0000-0001-5131-7583"
+    affiliation: "Cresset, New Cambridge House, Bassingbourn Rd, Litlington, SG8 0SS, United Kingdom"
+  - given-names: Julien
+    family-names: Michel
+    orcid: "https://orcid.org/0000-0003-0360-1760"
+    affiliation: "EaStCHEM School of Chemistry, The University of Edinburgh, Edinburgh, EH9 3FJ, United Kingdom"
+    email: julien.michel@ed.ac.uk
+preferred-citation:
+  type: article
+  title: "Alchemical Free Energy Methods Reproduce Scaffold Modifications in a Macrocyclic Peptide PCSK9 Series"
+  journal: ChemRxiv
+  year: 2026
+  doi: "10.26434/chemrxiv.15011937/v1"
+  url: "https://chemrxiv.org/doi/full/10.26434/chemrxiv.15011937/v1"
+  authors:
+    - given-names: Audrius
+      family-names: Kalpokas
+      orcid: "https://orcid.org/0000-0002-4579-070X"
+    - given-names: Lester
+      family-names: Hedges
+    - given-names: Mark
+      family-names: Mackey
+      orcid: "https://orcid.org/0000-0001-5131-7583"
+    - given-names: Julien
+      family-names: Michel
+      orcid: "https://orcid.org/0000-0003-0360-1760"

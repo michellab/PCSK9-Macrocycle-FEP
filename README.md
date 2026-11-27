@@ -3,10 +3,11 @@
 Data and scripts to reproduce the alchemical free energy calculations reported in:
 
 **Alchemical Free Energy Methods Reproduce Scaffold Modifications in a Macrocyclic Peptide PCSK9 Series**
-Audrius Kalpokas¹ [ORCID: 0000-0002-4579-070X], Mark Mackey² [ORCID: 0000-0001-5131-7583], Julien Michel¹* [ORCID: 0000-0003-0360-1760]
+Audrius Kalpokas¹ [ORCID: 0000-0002-4579-070X], Lester Hedges², Mark Mackey³ [ORCID: 0000-0001-5131-7583], Julien Michel¹* [ORCID: 0000-0003-0360-1760]
 
 ¹ EaStCHEM School of Chemistry, The University of Edinburgh, Edinburgh, EH9 3FJ, United Kingdom
-² Cresset, New Cambridge House, Bassingbourn Rd, Litlington, SG8 0SS, United Kingdom
+² OpenBioSim Community Interest Company, Edinburgh, EH3 7PE, United Kingdom
+³ Cresset, New Cambridge House, Bassingbourn Rd, Litlington, SG8 0SS, United Kingdom
 \* Corresponding author: [julien.michel@ed.ac.uk](mailto:julien.michel@ed.ac.uk)
 
 Preprint: https://chemrxiv.org/doi/full/10.26434/chemrxiv.15011937/v1
@@ -20,7 +21,7 @@ If you use this repository, please cite the manuscript:
 ```bibtex
 @article{
 doi:10.26434/chemrxiv.15011937/v1,
-author = {Audrius Kalpokas  and Mark Mackey  and Julien Michel },
+author = {Audrius Kalpokas and Lester Hedges and Mark Mackey and Julien Michel},
 title = {Alchemical Free Energy Methods Reproduce Scaffold Modifications in a Macrocyclic Peptide PCSK9 Series},
 journal = {ChemRxiv},
 volume = {2026},
