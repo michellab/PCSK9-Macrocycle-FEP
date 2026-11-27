@@ -34,7 +34,7 @@ eprint = {https://chemrxiv.org/doi/pdf/10.26434/chemrxiv.15011937/v1},
 }
 ```
 
-This repository is archived on Zenodo together with the container images used to run the simulations (DOI: <!-- TODO: add once archived -->). The GitHub repository does not contain the container images, so use the Zenodo record to get them (see [`simulations/docker/README.md`](simulations/docker/README.md)). The GitHub repository may be a few commits ahead of the Zenodo record.
+This repository is archived on Zenodo together with the container images used to run the simulations (DOI: [10.5281/zenodo.24595561](https://doi.org/10.5281/zenodo.24595561)). The GitHub repository does not contain the container images, so use the Zenodo record to get them (see [`simulations/docker/README.md`](simulations/docker/README.md)). The GitHub repository may be a few commits ahead of the Zenodo record.
 
 ---
 
@@ -110,7 +110,7 @@ cd PCSK9-Macrocycle-FEP
 
 ## Data availability
 
-Raw ligand (`data/ligands/*.sdf`) and protein (`data/proteins/*.pdb`) input structures, along with the post-processed free energy results used to generate the manuscript figures (`simulations/plotting/`), are provided directly in this repository. The container images used to run the simulations are archived in the Zenodo record of this repository.
+Raw ligand (`data/ligands/*.sdf`) and protein (`data/proteins/*.pdb`) input structures, along with the post-processed free energy results used to generate the manuscript figures (`simulations/plotting/`), are provided directly in this repository. The container images used to run the simulations are archived in the Zenodo record of this repository (DOI: [10.5281/zenodo.24595561](https://doi.org/10.5281/zenodo.24595561)).
 
 ---
 

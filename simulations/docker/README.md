@@ -20,16 +20,16 @@ The images can be obtained from the Zenodo archive (recommended) or from Docker 
 
 ## Option 1: Zenodo archive (recommended)
 
-The Zenodo record of this repository (DOI: <!-- TODO: add once archived -->) contains both images
-as `docker save` archives, placed in this directory:
+The Zenodo record of this repository (DOI: [10.5281/zenodo.24595561](https://doi.org/10.5281/zenodo.24595561)) contains both images
+as `docker save` archives. They are separate files in the record, next to the repository archive:
 
 | File                                        | Image                                    |
 |---------------------------------------------|------------------------------------------|
 | `pcsk9_fep_v1.0.docker.tar.gz`              | `akalpokas/pcsk9_fep:v1.0`               |
 | `pcsk9_fep_v2.0-scaffold-hop.docker.tar.gz` | `akalpokas/pcsk9_fep:v2.0-scaffold-hop`  |
 
-These archives are not part of the GitHub repository. If you cloned from GitHub, download them from
-Zenodo into this directory.
+These archives are not part of the GitHub repository or of the repository archive on Zenodo.
+Download them from the Zenodo record into this directory (`simulations/docker/`).
 
 First, check that the downloads are intact, from this directory:
 

@@ -4,6 +4,10 @@ title: "PCSK9-Macrocycle-FEP: data and scripts for alchemical free energy calcul
 type: software
 license: MIT
 repository-code: "https://github.com/michellab/PCSK9-Macrocycle-FEP"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.24595561"
+    description: "Zenodo archive of this repository and the container images"
 authors:
   - given-names: Audrius
     family-names: Kalpokas
